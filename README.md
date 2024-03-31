@@ -16,14 +16,14 @@ You can use the [available image Enhancers](#available-enhancers) to bring your 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/KiranPranay/swapseed
+git clone https://github.com/bansal/swapseed
 cd swapseed
 ```
 
 2. Install the required dependencies:
 
 ```pip
-pip install -r requirements.txt
+pip install -r requirements_gpu.txt
 ```
 
 3. Execution
