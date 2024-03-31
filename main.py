@@ -6,7 +6,7 @@ from insightface.app import FaceAnalysis
 from insightface.data import get_image as ins_get_image
 from faceswap import swap_n_show, swap_n_show_same_img, swap_face_single,fine_face_swap
 
-app = FaceAnalysis(name='buffalo_l')
+app = FaceAnalysis(name='buffalo_l', providers=['CUDAExecutionProvider'])
 app.prepare(ctx_id=0, det_size=(640, 640))
 
 # Download 'inswapper_128.onnx' file using gdown
@@ -28,7 +28,7 @@ img2_fn = 'images/keerthi.jpg'
 # swap_n_show_same_img(img1_fn, app, swapper)
 
 # Add face to an image
-swap_face_single(img1_fn, img2_fn, app, swapper, enhance=True, enhancer='REAL-ESRGAN 2x',device="cpu")
+swap_face_single(img1_fn, img2_fn, app, swapper, enhance=True, enhancer='REAL-ESRGAN 2x',device="cuda")
 
 # Fine face swapper
-fine_face_swap(img1_fn, img2_fn, app, swapper, enhance=True, enhancer='REAL-ESRGAN 2x',device="cpu")
+fine_face_swap(img1_fn, img2_fn, app, swapper, enhance=True, enhancer='REAL-ESRGAN 2x',device="cuda")
